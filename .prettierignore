@@ -1,0 +1,23 @@
+# ignore these files/folders
+.*
+*.log
+node_modules
+/coverage
+/dist
+/build
+/public
+tags*
+
+# allow these files/folders
+!.gitignore
+!.nvmrc*
+!.firebaserc*
+!.stylelintrc*
+!.eslintrc*
+!.eslintignore
+!.postcssrc*
+!.prettierrc*
+!.editorconfig
+!.storybook
+!.babelrc*
+!.prerender-spa.json

@@ -2,11 +2,12 @@
 // $light-orange: #ff8c00;
 // $navbar-default-color: $light-orange;
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "bootstrap";
-@import "sticky-footer";
-@import "announcements";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import 'bootstrap';
+@import 'rails_bootstrap_forms';
+@import 'sticky-footer';
+@import 'announcements';
 
 // Fixes bootstrap nav-brand container overlap
 @include media-breakpoint-down(xs) {

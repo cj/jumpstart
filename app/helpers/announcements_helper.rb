@@ -1,19 +1,27 @@
+# frozen_string_literal: true
+
 module AnnouncementsHelper
+  #:reek:NilCheck
   def unread_announcements(user)
     last_announcement = Announcement.order(published_at: :desc).first
+
     return if last_announcement.nil?
 
+    last_read_at = user.announcements_last_read_at
+
     # Highlight announcements for anyone not logged in, cuz tempting
-    if user.nil? || user.announcements_last_read_at.nil? || user.announcements_last_read_at < last_announcement.published_at
-      "unread-announcements"
+    if user.nil? ||
+        last_read_at.nil? ||
+        last_read_at < last_announcement.published_at
+      'unread-announcements'
     end
   end
 
   def announcement_class(type)
     {
-      "new" => "text-success",
-      "update" => "text-warning",
-      "fix" => "text-danger",
-    }.fetch(type, "text-success")
+      'new' => 'text-success',
+      'update' => 'text-warning',
+      'fix' => 'text-danger',
+    }.fetch(type, 'text-success')
   end
 end

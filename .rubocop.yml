@@ -1,0 +1,53 @@
+inherit_from:
+  - .rubocop_shopify.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'db/*'
+    - 'db/fixtures/**/*'
+    - 'tmp/**/*'
+
+Layout/EndOfLine:
+  Enabled: false
+
+Style/UnneededCondition:
+  Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/ClassAndModuleChildren:
+  Description: Checks style of children classes and modules.
+  Enabled: false
+  EnforcedStyle: nested
+
+Metrics/LineLength:
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  IgnoreCopDirectives: false
+  IgnoredPatterns:
+    - '\A\s*(remote_)?test(_\w+)?\s.*(do|->)(\s|\Z)'
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'config/initializers/devise.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  EnforcedStyle: omit_parentheses
+  AllowParenthesesInMultilineCall: true
+  AllowParenthesesInChaining: false
+
+Style/TrailingCommaInArguments:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma

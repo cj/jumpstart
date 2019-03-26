@@ -1,4 +1,39 @@
-.DS_Store
-.idea
-.idea/
-
+# ignore these files/folders
+.*
+# ignore these files/folders
+.*
+*.log
+node_modules
+/coverage
+/dist
+/build
+/tmp
+/log
+tags*
+# We do not need this committed as it is compiled in the CI
+/public/packs
+# Ignore uploaded files in development
+/storage/*
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+/config/credentials/*.key
+credentials.yml.enc
+# allow these files/folders
+!.keep
+!/tmp/.keep
+!/log/.keep
+!.gitignore
+!.bundle/config
+!.nvmrc*
+!.firebaserc*
+!.stylelintrc*
+!.eslintrc*
+!.editorconfig
+!.postcssrc*
+!.prettierrc*
+!.storybook
+!.babelrc*
+!.prerender-spa.json
+!.rubocop*
+!.reek*
+!.*ignore
